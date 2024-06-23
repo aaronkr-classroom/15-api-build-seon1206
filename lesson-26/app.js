@@ -96,7 +96,7 @@ app.use((req, res, next) => {
  */
 
 // 애플리케이션에 Mongoose 설정
-const mongoose = require("mongoose");// mongoose를 요청
+const mongoose = require("mongoose"); // mongoose를 요청
 mongoose.connect(
   "mongodb+srv://dbtjdqkr12:dbtjd960713!@ut-node.9pkr7pn.mongodb.net/?retryWrites=true&w=majority&appName=UT-Node/ut-node", //Atlas 경로
   { useNewUrlParser: true }
@@ -116,7 +116,7 @@ app.set("port", process.env.PORT || 3000);
 
 // ejs 레이아웃 렌더링
 app.set("view engine", "ejs"); // ejs를 사용하기 위한 애플리케이션 세팅
-app.use(layouts); // layout 모듈 사용을 위한 애플리케이션 세팅
+app.use(layouts); 
 app.use(express.static("public"));
 
 // body-parser의 추가
@@ -128,7 +128,7 @@ app.use(expressValidator());
 
 // @TODO: Lesson 26. 순서가 중요하다. 라우트가 먼저 오면 미들웨어가 먼저 실행된다.
 // 그래서 래이아웃을 먼저 설정하고 라우트를 설정해야 한다.
-app.use("/", router); 
+app.use("/", router); // 라우터를 애플리케이션에 추가
 
 /**
  * =====================================================================
@@ -150,10 +150,6 @@ app.use("/", router);
 /** @TODO: Train 라우트의 trainRoutes.js로의 이동 */
 
 /** @TODO: Talk 라우트의 talkRoutes.js로의 이동 */
-
-/** @TODO: Research 라우트의 researchRoutes.js로의 이동 */
-
-/** @TODO: Research 라우트의 researchRoutes.js로의 이동 */
 
 /**
  * =====================================================================
